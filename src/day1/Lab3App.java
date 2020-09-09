@@ -8,16 +8,14 @@ public class Lab3App {
 		// TODO Auto-generated method stub
 		Scanner scnr = new Scanner(System.in);
 		
-		int num;
-				
-		boolean shouldContinue = true;
-
-		while(shouldContinue) {
 		
-		System.out.println("Enter an integer: ");
-		num=scnr.nextInt();
-				
-				for(num=1;num<=100;num++) {
+		boolean shouldContinue = true;
+		String response;
+
+		while(shouldContinue==true) {
+			System.out.println("Enter an integer: ");
+			int num=scnr.nextInt();
+				{
 					if(num%2==1) {
 						System.out.println(num+" and odd");
 					}else if((num%2==0)&&(num<=25)) {
@@ -31,10 +29,12 @@ public class Lab3App {
 				}else {
 					System.out.println("you entered an invalid number");
 				}
-				
+
 			}
-				String response = scnr.next();
-				shouldContinue = response.equals("y");
+				System.out.println("Would you like to roll again? y/n");
+				response = scnr.next();
+				shouldContinue = response.equalsIgnoreCase("y");
+
 		}
 		
 		System.out.println("Goodbye!");
